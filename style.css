@@ -5,20 +5,36 @@
 }
 
 .header {
+    display: flex;
     position: relative;
     min-height: 100px;
     padding: 20px;
     margin: 1% 1% 1px 1%;
+
+    justify-items: center;
 }
 
-.navbar {
+.header img {
+    border-radius: 50%;
+    max-width: 200px;
+    width: 100%;
+    height: auto;
+}
+
+.circular--portrait {
     position: relative;
-    background: rgb(140, 125, 115);
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.row h2 {
     display: flex;
-    min-height: 25px;
-    padding: 10px;
-    margin: 1px 1% 1px 1%;
-    justify-content: center;
+    align-items: center;
+    background: rgb(140, 125, 115);
+    padding-left: 10px;
+    color: aliceblue;
 }
 
 .navbar a {
@@ -32,13 +48,13 @@
 }
 
 .side {
-    min-width: 120px;
+    min-width: 40%;
     padding: 10px;
     justify-items: center;
 }
 
-.main {
-    padding-left: 30px;
+.side ul {
+    padding-left: 20px;
 }
 
 .fakeimg {
@@ -73,4 +89,24 @@
     width: 40px;
     padding: 0 10px;
     background: transparent;
+}
+
+.even-columns {
+    display: grid;
+    gap: 3rem;
+}
+
+@media (min-width: 426px) {
+    .even-columns {
+        grid-auto-flow: column;
+        grid-auto-columns: 1fr;
+    }
+
+    .columns-start-2 {
+        grid-column: 1/2;
+    }
+
+    .columns-end-2 {
+        grid-column: 2/5;
+    }
 }
